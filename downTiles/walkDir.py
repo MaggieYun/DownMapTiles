@@ -40,8 +40,8 @@ def visitDir(img_path,db_path,db_name):
                 tilepath = os.path.join(root,filepath)
                 xyz = tilepath.split(os.sep)
                 z = int(xyz[-3][1:])
-                y = int(xyz[-2][1:8],16)
-                x = int(xyz[-1][1:8],16)
+                y = int(xyz[-2][1:9],16)
+                x = int(xyz[-1][1:9],16)
                 # print tilepath
 
                 inn = cStringIO.StringIO()
@@ -64,7 +64,9 @@ def visitDir(img_path,db_path,db_name):
 
 
 if __name__ == '__main__':
-    img_path = r'C:\wulumuqi'
-    db_path = r'g:'
-    db_name = 'ceshishujuku'
+    img_path = r'C:\jc'
+    db_path = r'c:'
+    db_name = 'jincheng4'
     visitDir(img_path,db_path,db_name)
+
+    # 数据库中创建索引的代码为：create xyz_index on layer(x,y,z)
